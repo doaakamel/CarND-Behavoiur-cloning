@@ -85,7 +85,7 @@ In order to gauge how well the model was working, I split my image and steering 
 every epoch for the first 3 epoch then in the next epochs the training set error decreses while the validation set increase that indicates that overfitting has occured.
 
 
-To combat the overfitting, I modified the model so that it trains only for 3 epochs
+To combat the overfitting, I have used more data and used Dropout layers
 
 
 The final step was to run the simulator to see how well the car was driving around track one. There were a few spots where the vehicle fell off the track to improve the driving behavior in these cases, I increased the recovery data to make the car returns to road when it leaves the road.
