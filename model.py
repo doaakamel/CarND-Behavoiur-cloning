@@ -10,12 +10,7 @@ from keras.layers.pooling import MaxPooling2D
 from keras.layers import Dropout
 from keras.models import load_model
 
-###########################################################loading the 
-
-    
- ######################################################################## loading recovery data for the cases the car goes left ##################################################   
-
-#############################################################loading recovery data for  the cases the car goes right ##############################################################
+###############################loading data ##########################################################################################
 lines =[]
 images =[]
 measurments =[]
@@ -57,9 +52,6 @@ for line in lines:
     measurments.append(measurment)
     images.append(cv2.flip(image,1))
     measurments.append(measurment*-1.0)
-   
-# ##########################################################################3
-# 
 
 lines=[]   
 with open ("./recovery6/driving_log.csv") as csvfile:
@@ -97,26 +89,7 @@ for line in lines:
     measurments.append(measurment)
     images.append(cv2.flip(image,1))
     measurments.append(measurment*-1.0) 
-# lines=[]   
-# with open ("./recovery9/driving_log.csv") as csvfile:
-#     reader = csv.reader(csvfile)
-#     for line in reader:
-#         lines.append(line)
-# for line in lines:
-#     if flag==0:
-#         flag=1
-#         continue 
-#     source_path=line[0]
-#     filename= source_path.split('/')[-1]
-#     current_path="./recovery9/IMG/" +filename 
-#     image=cv2.imread(current_path)
-#     images.append(image)
-#     measurment = float(line[3])
-#     measurments.append(measurment)
-#     images.append(cv2.flip(image,1))
-#     measurments.append(measurment*-1.0)   
-   
- ##########################################################################################
+
 
 #######################################add the images to traiin array and shuffle the data #########################################################################################
 X_train=np.array(images)
